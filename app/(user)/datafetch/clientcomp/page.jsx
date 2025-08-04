@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import {useEffect} from "react";
 const page = () => {
@@ -16,10 +16,12 @@ const page = () => {
     },[]);
 
   return (
+      <Suspense fallback={<p>search params</p>}>
     <div>
       <h1>name - {name}</h1>
       <h1>probability - </h1>
     </div>
+      </Suspense>
   )
 }
 
